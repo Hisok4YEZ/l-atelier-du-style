@@ -1,0 +1,125 @@
+/* === BANNIÈRE HERO MODERNE === */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/salon.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    /* ✅ effet de défilement type parallax */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blanc-casse);
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    /* ✅ assombrit l’image pour mieux voir le texte */
+    z-index: 2;
+}
+
+.hero .overlay {
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--or-rose);
+    margin-bottom: 1rem;
+    animation: slideFade 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+.hero .slogan {
+    font-size: 1.4rem;
+    font-style: italic;
+    animation: slideFade 2s ease-out forwards;
+    opacity: 0;
+}
+
+/* Animation du texte */
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === SECTION PRESTATIONS COMPACT === */
+.prestations {
+    background-color: var(--beige-clair);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.prestations h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.prestations-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.prestation {
+    background-color: var(--blanc-casse);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    transition: transform 0.3s;
+}
+
+.prestation:hover {
+    transform: translateY(-5px);
+}
+
+.prestation img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+/* === CTA === */
+.cta {
+    background-color: var(--noir);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.btn-rdv {
+    background-color: var(--or-rose);
+    color: var(--noir);
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+}
+
+.btn-rdv:hover {
+    background-color: #b78f64;
+}

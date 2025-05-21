@@ -1,0 +1,231 @@
+/* === Import Google Fonts === */
+/* Playfair Display pour les titres, Lato pour le texte courant */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+/* === Palette de couleurs définie en variables CSS === */
+:root {
+    --noir: #1A1A1A;
+    /* Fond sombre principal */
+    --or-rose: #D4AF7F;
+    /* Couleur d’accent / titres */
+    --beige-clair: #F8F5F0;
+    /* Fond général clair */
+    --blanc-casse: #FFFFFA;
+    /* Texte clair */
+}
+
+/* === Reset de base pour homogénéiser l'affichage === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === Style global du body === */
+body {
+    font-family: 'Lato', sans-serif;
+    /* Police principale */
+    background-color: var(--beige-clair);
+    /* Fond général clair */
+    color: var(--noir);
+    /* Texte sombre par défaut */
+    line-height: 1.6;
+    /* Bonne lisibilité */
+}
+
+/* === HEADER GLOBAL === */
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* Centrage horizontal du contenu */
+    align-items: center;
+    /* Alignement vertical */
+    background-color: var(--noir);
+    /* Fond noir classe */
+    padding: 0.8rem 1.2rem;
+    /* Moins de vide vertical */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    /* ✅ Effet d’ancrage visuel */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Ligne discrète */
+    flex-wrap: wrap;
+    /* Adapté au mobile */
+    gap: 1rem;
+    /* Espace souple entre blocs */
+}
+
+/* === LOGO CENTRÉ + PLUS VISIBLE === */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    /* ✅ Plus grand */
+    color: var(--or-rose);
+    margin: 0 2rem;
+    /* Espace entre logo et les liens */
+    flex-shrink: 0;
+    /* Le logo ne se réduit pas trop */
+}
+
+.logo img {
+    height: 48px;
+    /* ✅ Logo plus lisible */
+}
+
+/* === BLOCS GAUCHE ET DROITE (liens) === */
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 0.7rem;
+    /* ✅ liens proches mais aérés */
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+/* === LIENS DE NAVIGATION === */
+.nav-link {
+    font-size: 1.05rem;
+    /* ✅ Plus lisible */
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color: var(--blanc-casse);
+    text-decoration: none;
+    padding: 6px 12px;
+    /* ✅ Zone cliquable élargie */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--or-rose);
+    background-color: rgba(255, 255, 255, 0.05);
+    /* ✅ effet survol subtil */
+}
+
+/* === VERSION MOBILE === */
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin: 0.4rem 0;
+        font-size: 1.6rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === FOOTER === */
+footer {
+    background-color: var(--noir);
+    /* Fond noir */
+    color: var(--blanc-casse);
+    /* Texte clair */
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Conteneur global du footer */
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Coordonnées, liens et réseaux */
+.footer-content .coordonnees p,
+.footer-content .mentions,
+.footer-content .reseaux {
+    margin-bottom: 0.5rem;
+}
+
+/* Icônes des réseaux sociaux */
+.footer-content .reseaux a {
+    color: var(--or-rose);
+    margin: 0 8px;
+    font-size: 1.3rem;
+    transition: opacity 0.3s;
+}
+
+.footer-content .reseaux a:hover {
+    opacity: 0.7;
+}
+
+/* Liens cliquables dans le footer */
+.footer-content a {
+    color: var(--or-rose);
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* === Icônes personnalisées pour les réseaux sociaux === */
+.icon-reseau {
+    width: 20px;
+    /* ✅ Taille réduite pour s'intégrer discrètement */
+    height: auto;
+    margin: 0 8px;
+    background-color: var(--blanc-casse);
+    /* ✅ Fond clair derrière l’icône */
+    border-radius: 50%;
+    /* Cercle autour de l’icône */
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    /* ✅ Aligne bien avec le texte si besoin */
+}
+
+.icon-reseau:hover {
+    transform: scale(1.1);
+    /* Petit effet au survol */
+}
+
+/* === Responsive mobile === */
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        /* ✅ tout passe en colonne */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-content .reseaux {
+        justify-content: center;
+    }
+
+    .footer-content .coordonnees,
+    .footer-content .mentions {
+        text-align: center;
+    }
+}
